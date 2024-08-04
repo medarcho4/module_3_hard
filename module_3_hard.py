@@ -12,6 +12,9 @@ def calculate_structure_sum(data):
     elif isinstance(data, tuple):
         for item in data:
             total_sum += calculate_structure_sum(item)
+    elif isinstance(data, set):
+        for item in data:
+            total_sum += calculate_structure(item)
     elif isinstance(data, str):
         total_sum += len(data)
     elif isinstance(data, (int, float)):
